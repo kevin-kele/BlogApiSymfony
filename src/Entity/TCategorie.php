@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-
+use App\Entity\base\TraitEntity;
 use App\Repository\TCategorieRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -11,7 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass=TCategorieRepository::class)
  */
 class TCategorie
-{
+{   
+    use TraitEntity;
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

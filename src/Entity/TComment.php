@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-
+use App\Entity\base\TraitEntity;
 use App\Repository\TCommentRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -9,7 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass=TCommentRepository::class)
  */
 class TComment
-{
+{   
+    use TraitEntity;
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

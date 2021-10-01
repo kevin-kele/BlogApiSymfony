@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-
+use App\Entity\base\TraitEntity;
 use App\Repository\TuserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -9,9 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=TuserRepository::class)
+ * @UniqueEntity(fields="username",message="username existe deja")
  */
 class Tuser
-{
+{   
+    use TraitEntity;
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -20,7 +22,7 @@ class Tuser
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $username;
 

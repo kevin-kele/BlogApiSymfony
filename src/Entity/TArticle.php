@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-
+use App\Entity\base\TraitEntity;
 use App\Repository\TArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -10,6 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class TArticle
 {
+    use TraitEntity;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -36,6 +38,7 @@ class TArticle
      * @ORM\ManyToOne(targetEntity=Tuser::class, inversedBy="tArticles")
      */
     private $fk_user;
+
 
     public function getId(): ?int
     {
